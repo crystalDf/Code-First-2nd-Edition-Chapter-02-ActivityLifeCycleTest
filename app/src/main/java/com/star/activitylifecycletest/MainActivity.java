@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,22 +28,16 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, tempData);
         }
 
-        mStartNormalActivityButton = (Button) findViewById(R.id.start_normal_activity);
-        mStartNormalActivityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NormalActivity.class);
-                startActivity(intent);
-            }
+        mStartNormalActivityButton = findViewById(R.id.start_normal_activity);
+        mStartNormalActivityButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, NormalActivity.class);
+            startActivity(intent);
         });
 
-        mStartDialogActivityButton = (Button) findViewById(R.id.start_dialog_activity);
-        mStartDialogActivityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
-                startActivity(intent);
-            }
+        mStartDialogActivityButton = findViewById(R.id.start_dialog_activity);
+        mStartDialogActivityButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+            startActivity(intent);
         });
     }
 
